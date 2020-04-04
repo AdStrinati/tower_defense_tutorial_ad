@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class Node : MonoBehaviour
     private Color startColor;
     private GameObject turret;
     public Vector3 turretPositionOffset;
+    BuildManager buildManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        buildManager = BuildManager.instance;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
@@ -26,7 +29,17 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(turret != null)
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (buildManager.GetTurretToBuild() == null)
+        {
+            return;
+        }
+
+        if (turret != null)
         {
             rend.material.color = hoverColorKo;
         }
@@ -41,8 +54,11 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor;
     }
+
     private void OnMouseDown()
     {
+        
+
         if(turret != null)
         {
             Debug.Log("diocane");
@@ -51,7 +67,7 @@ public class Node : MonoBehaviour
 
         //build turret
 
-        GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + turretPositionOffset, transform.rotation);
     }
 }
