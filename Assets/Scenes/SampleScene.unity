@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5833,6 +5833,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 339418164}
     m_Modifications:
+    - target: {fileID: 7276448228461417129, guid: ce34c4c454fc51d4ea70b7772d0398cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f06248c9a7fa0ae418db7c3969e1bd9c,
+        type: 3}
     - target: {fileID: 7276448228461417132, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5938,6 +5944,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7276448228461417132, guid: ce34c4c454fc51d4ea70b7772d0398cc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276448228461417132, guid: ce34c4c454fc51d4ea70b7772d0398cc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276448228461417132, guid: ce34c4c454fc51d4ea70b7772d0398cc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7276448228461417133, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
       propertyPath: m_Name
@@ -5966,7 +5987,7 @@ PrefabInstance:
     - target: {fileID: 7276448228461417134, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchaseStandardTurret
+      value: PurchaseMissileLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 7276448228461417134, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
@@ -7874,7 +7895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 8529245697656806697, guid: bf3ef9f91119e8746959502a5c7b44ee,
     type: 3}
-  anotherTurret: {fileID: 8529245697656806697, guid: bf3ef9f91119e8746959502a5c7b44ee,
+  missileLauncherPrefab: {fileID: 890224770638456220, guid: a23be0987af4dca4d89be57711f273ad,
     type: 3}
 --- !u!224 &869684601 stripped
 RectTransform:
@@ -18364,7 +18385,7 @@ PrefabInstance:
     - target: {fileID: 7276448228461417134, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchaseStandardTurret
+      value: PurchaseStandardTurret
       objectReference: {fileID: 0}
     - target: {fileID: 7276448228461417134, guid: ce34c4c454fc51d4ea70b7772d0398cc,
         type: 3}
