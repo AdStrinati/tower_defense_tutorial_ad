@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   explosionRadius: 8
-  impactEffect: {fileID: 1937644519438519790, guid: 3315b8a9c11fad34cab7957f112060b4,
+  impactEffect: {fileID: 5458420419642330202, guid: e97dc8e77acd67a46974431a5e6d4baf,
     type: 3}
 --- !u!1 &8387555273291796867
 GameObject:

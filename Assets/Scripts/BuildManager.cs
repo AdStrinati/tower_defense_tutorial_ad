@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    private GameObject turretToBuild;
+    private TurretBlueprint turretToBuild;
     public static BuildManager instance;
     public GameObject standardTurretPrefab;
     public GameObject missileLauncherPrefab;
@@ -19,15 +19,24 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
+    public bool CanBuild { get { return turretToBuild != null;  } }
    
+    public bool EnoughMoney { get { return PlayerStats.money >= turretToBuild.cost;  } }
 
-    public GameObject GetTurretToBuild()
-    {
-        return turretToBuild;
-    }
-
-    public void SetTurretToBuild(GameObject turret)
+    public void SetTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
+    }
+
+    public void BuildTurretOn(Node node) {
+
+        if(PlayerStats.money < turretToBuild.cost)
+        {
+            Debug.Log("Stronzo figlio di puttana");
+            return;
+        }
+        PlayerStats.money -= turretToBuild.cost;
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.turret = turret;
     }
 }
